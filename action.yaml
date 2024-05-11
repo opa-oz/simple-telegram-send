@@ -1,0 +1,20 @@
+name: "Simple Telegram send"
+description: "Send it straightforwardly to Telegram"
+author: Vladimir Levin
+branding:
+  icon: code
+  color: purple
+inputs:
+  token:
+    description: Telegram bot's authorization token.
+    required: true
+  to:
+    description: Unique identifier or username of the target Telegram chat.
+    required: true
+  message:
+    description: Text message to send.
+    required: false
+    default: "Ping from ${{ github.repository }}"
+runs:
+  using: 'node20'
+  main: 'action/index.js'
